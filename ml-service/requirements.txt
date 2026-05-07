@@ -10,3 +10,5 @@ lightgbm
 imbalanced-learn
 fredapi
 requests
+gunicorn
+whitenoise

@@ -22,7 +22,7 @@ yarn-error.log*
 **/.env/
 **/db.sqlite3
 **/media/
-**/models/*.pkl
+# **/models/*.pkl
 
 # Vite / React
 **/dist/
