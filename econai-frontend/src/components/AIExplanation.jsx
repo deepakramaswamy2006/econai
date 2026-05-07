@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { usePageTheme } from "../utils/pageTheme";
 
+import { API_BASE } from "../config";
+
 export default function AIExplanation({ context, predictionData, newsQuery, accentColor = "#3b82f6" }) {
   const [explanation, setExplanation] = useState("");
   const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ export default function AIExplanation({ context, predictionData, newsQuery, acce
     setExplanation("");
 
     axios
-      .post("http://localhost:5001/api/predictions/explain", {
+      .post(`${API_BASE}/predictions/explain`, {
         context,
         predictionData,
         newsQuery: newsQuery || context,

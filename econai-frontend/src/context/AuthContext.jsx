@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AuthContext = createContext(null);
 
-const API_BASE = "http://localhost:5001/api";
+import { API_BASE } from "../config";
 
 // Attach JWT to every axios request globally
 axios.interceptors.request.use((config) => {

@@ -5,6 +5,8 @@ import PredictionNews from "../components/PredictionNews";
 import PredictionShell from "../components/PredictionShell";
 import { usePageTheme } from "../utils/pageTheme";
 
+import { API_BASE } from "../config";
+
 const ACCENT = "#3b82f6";
 
 const initialForm = {
@@ -36,7 +38,7 @@ export default function GDPForecast() {
     if (NUMERIC_FIELDS.some(f => form[f.name] === "")) { alert("Please fill in all numerical economic indicators."); return; }
     setLoading(true); setError(null); setShowInsights(false); setResult(null);
     try {
-      const res = await axios.post("http://localhost:5001/api/predictions/predict-gdp", {
+      const res = await axios.post(`${API_BASE}/predictions/predict-gdp`, {
         ...form,
         gdp_growth: Number(form.gdp_growth), inflation: Number(form.inflation),
         industrial_production: Number(form.industrial_production), job_market: Number(form.job_market),

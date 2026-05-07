@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { usePageTheme } from "../utils/pageTheme";
 
+import { API_BASE } from "../config";
+
 // Simple in-memory cache per query to avoid repeated API calls & duplicate articles
 const newsCache = {};
 
@@ -29,7 +31,7 @@ export default function PredictionNews({ query, accentColor = "#3b82f6" }) {
     }
 
     axios
-      .get(`http://localhost:5001/api/predictions/news?query=${encodeURIComponent(query)}`)
+      .get(`${API_BASE}/predictions/news?query=${encodeURIComponent(query)}`)
       .then((res) => {
         if (!isMounted) return;
         if (res.data.error) {
