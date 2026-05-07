@@ -1,0 +1,12 @@
+django
+djangorestframework
+django-cors-headers
+pandas
+numpy
+joblib
+scikit-learn
+xgboost
+lightgbm
+imbalanced-learn
+fredapi
+requests
